@@ -163,7 +163,6 @@ Por último ejecuta el siguiente comando para iniciar el contenedor de Apache co
 ```sh
   sudo docker run -p 80:80 -v /usr/local/apache2/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf -d httpd
 ```
-*Recuerda cuando vayas a inicializar las máquinas virtuales, iniciar el docker y ejecutarlas dentro del contenedor <br>
-*En las oportunidades de mejora encontramos que se le puede agregar un dominio y un certificado ssl.
+*Recuerda cuando vayas a inicializar las máquinas virtuales, iniciar el docker y ejecutarlas dentro del contenedor
 *******
 
