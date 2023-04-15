@@ -1,5 +1,6 @@
 # **Reto 3**
 
+**Nombre:** Paulina Ocampo Duque <br>
 **Curso:** Tópicos Especiales en Telemática <br>
 **Título:** Aplicación Monolítica con Balanceo y Datos Distribuidos (BD y archivos<br>
 **Objetivo:** Desplegar un CMS Drupal utilizando la tecnología de contenedores (docker), con su propio
@@ -141,20 +142,20 @@ Después crearemos y accederemos a un archivo creado en ese directorio
   sudo nano /usr/local/apache2/conf/httpd.conf
 ```
 Y editaremos el archivo con la siguiente configuración
+
 ```sh
   <Proxy "balancer://mycluster">
-    BalancerMember "http://172.31.31.147:80/"
-    BalancerMember "http://172.31.16.51:80/"
-</Proxy>
+        BalancerMember "http://172.31.31.147:80/"
+        BalancerMember "http://172.31.16.51:80/"
+    </Proxy>
 
-<VirtualHost *:80>
-    ProxyPreserveHost On
-    ProxyPass "/" "balancer://mycluster/"
-    ProxyPassReverse "/" "balancer://mycluster/"
-</VirtualHost>
+    <VirtualHost *:80>
+        ProxyPreserveHost On
+        ProxyPass "/" "balancer://mycluster/"
+        ProxyPassReverse "/" "balancer://mycluster/"
+    </VirtualHost>
 ```
 Guarda y cierra el archivo.
-
 
 Por último ejecuta el siguiente comando para iniciar el contenedor de Apache con el archivo de configuración que acabas de crear
 
@@ -162,4 +163,6 @@ Por último ejecuta el siguiente comando para iniciar el contenedor de Apache co
   sudo docker run -p 80:80 -v /usr/local/apache2/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf -d httpd
 ```
 *Recuerda cuando vayas a inicializar las máquinas virtuales, iniciar el docker y ejecutarlas dentro del contenedor
+*En las oportunidades de mejora encontramos que se le puede agregar un dominio y un certificado ssl.
 *******
+
