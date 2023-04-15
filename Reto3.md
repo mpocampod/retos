@@ -128,6 +128,7 @@ Para la instancia del drupal 2
   docker run -p 80:80 --name drupal2 --network=host -e DRUPAL_DATABASE_HOST=172.31.91.32 -e DRUPAL_DATABASE_USER=user@mpocampod -e DRUPAL_DATABASE_PASSWORD=password -e DRUPAL_DATABASE_NAME=drupal -e DRUPAL_FILES_PATH=/mnt/nfs -e DRUPAL_FILES_NFS_SERVER=172.31.93.197 -e DRUPAL_FILES_NFS_PATH=/exports -d drupal
 ```
 <div id='apache'/> 
+
 #### **5. Balanceador de cargas**
 Ahora crearemos la instancia EC2 en AWS del balanceador de cargas y la asociaremos al puerto 443 para permitir peticiones HTTPS utilizando Apache, iniciamos el ssh e instalamos docker como vimos anteriormente y descargamos la imagen de Docker de Apache 
 ```sh
