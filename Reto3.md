@@ -155,13 +155,11 @@ Y editaremos el archivo con la siguiente configuración
 ```
 Guarda y cierra el archivo.
 
+
 Por último ejecuta el siguiente comando para iniciar el contenedor de Apache con el archivo de configuración que acabas de crear
 
 ```sh
   sudo docker run -p 80:80 -v /usr/local/apache2/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf -d httpd
 ```
-
-
-
-
+*Recuerda cuando vayas a inicializar las máquinas virtuales, iniciar el docker y ejecutarlas dentro del contenedor
 *******
